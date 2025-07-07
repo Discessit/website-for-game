@@ -7,22 +7,18 @@ from pathlib import Path
 
 app = FastAPI()
 
-# Получаем абсолютные пути
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 TEMPLATES_DIR = BASE_DIR / "templates"
 
-# Проверяем существование директорий
 if not STATIC_DIR.exists():
     raise Exception(f"Directory {STATIC_DIR} does not exist")
 if not TEMPLATES_DIR.exists():
     raise Exception(f"Directory {TEMPLATES_DIR} does not exist")
 
-# Настройка статических файлов и шаблонов
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
-# Путь к файлу игры
 GAME_FILE_PATH = STATIC_DIR / "downloads" / "game_setup.exe"
 GAME_FILE_NAME = "awesome_game_setup.exe"
 
