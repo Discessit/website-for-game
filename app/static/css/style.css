@@ -1,22 +1,25 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --main-bg: #0a0a0a;
     --dark-red: #5c0000;
     --blood-red: #8a0303;
     --gold: #d4af37;
     --text-primary: #e0e0e0;
-    --text-secondary: #b0b0b0;
+    --text-secondary: #ccc;
 }
 
 body {
     font-family: 'IM Fell English SC', serif;
     background-color: var(--main-bg);
     color: var(--text-primary);
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
-    background-image:
-        radial-gradient(circle at 10% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 20%);
+    background-image: radial-gradient(circle at center, rgba(139, 0, 0, 0.1) 0%, transparent 20%);
 }
 
 h1, h2, h3 {
@@ -89,34 +92,6 @@ header {
     text-align: center;
 }
 
-.features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-    gap: 1.5rem;
-}
-
-.feature {
-    flex: 1;
-    min-width: 250px;
-    background: rgba(20, 20, 20, 0.7);
-    border: 1px solid var(--gold);
-    border-radius: 5px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.feature:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.5);
-}
-
-.feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
 .download-section {
     padding: 3rem 0;
     text-align: center;
@@ -129,29 +104,6 @@ header {
     border: 1px solid var(--gold);
     border-radius: 5px;
     padding: 2rem;
-}
-
-.version-info {
-    margin-bottom: 2rem;
-}
-
-.specs {
-    list-style-type: none;
-    padding: 0;
-    margin: 1.5rem 0;
-}
-
-.specs li {
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.specs li::before {
-    content: "⚔";
-    position: absolute;
-    left: 0;
-    color: var(--gold);
 }
 
 .download-btn {
@@ -208,6 +160,250 @@ footer {
     margin-top: 0.5rem;
 }
 
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: rgba(20, 20, 20, 0.7);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+}
+
+.main-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a:focus {
+    color: var(--gold);
+}
+
+.main-nav a:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.harbingers-section {
+    padding: 3rem 0;
+    background: rgba(10, 10, 20, 0.7);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+}
+
+.harbingers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.boss-card {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid var(--dark-red);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boss-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.5);
+}
+
+.main-boss {
+    border: 2px solid var(--gold);
+    background: rgba(30, 15, 15, 0.9);
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.7);
+}
+
+.boss-image {
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--dark-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-bg);
+}
+
+.boss-image.vertical-image {
+    height: 350px;
+}
+
+.main-boss .boss-image {
+    height: 450px;
+    position: relative;
+    min-height: 400px;
+}
+
+.boss-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.boss-info {
+    padding: 1.5rem;
+}
+
+.main-boss .boss-info {
+    padding: 2rem;
+}
+
+.boss-title {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.main-boss .boss-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.main-boss .boss-title h3 {
+    color: var(--gold);
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 0 0 10px #000;
+}
+
+.main-boss .boss-title p {
+    color: var(--blood-red);
+    font-size: 1.3rem;
+    margin: 0.5rem 0 0;
+    font-style: italic;
+}
+
+.boss-story {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.boss-abilities {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.boss-abilities li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.boss-abilities li::before {
+    content: "🗡";
+    position: absolute;
+    left: 0;
+    color: var(--blood-red);
+}
+
+.main-boss .boss-abilities li::before {
+    content: "🜚";
+}
+
+.harbinger-card {
+    display: flex;
+    background: rgba(20, 20, 30, 0.8);
+    border: 1px solid var(--dark-red);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.harbinger-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.5);
+    border-color: var(--gold);
+}
+
+.harbinger-image {
+    width: 300px;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+    background: var(--main-bg);
+}
+
+.harbinger-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.harbinger-card:hover .harbinger-image img {
+    transform: scale(1.05);
+}
+
+.harbinger-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 1rem;
+    text-align: center;
+}
+
+.harbinger-title h3 {
+    color: var(--gold);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.harbinger-title p {
+    color: var(--blood-red);
+    margin: 0;
+    font-style: italic;
+}
+
+.harbinger-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.fighting-style, .harbinger-story {
+    margin-bottom: 1.5rem;
+}
+
+.fighting-style h4, .harbinger-story h4 {
+    color: var(--gold);
+    border-bottom: 1px solid var(--dark-red);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--blood-red);
+    text-align: right;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-right: 2px solid var(--gold);
+    transition: color 0.3s ease;
+}
+
+.harbinger-card:hover .quote {
+    color: var(--gold);
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
@@ -217,11 +413,39 @@ footer {
         font-size: 1.8rem;
     }
 
-    .features {
+    .logo {
+        height: 100px;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .boss-image {
+        height: 200px;
+    }
+
+    .boss-image.vertical-image {
+        height: 280px;
+    }
+
+    .main-boss .boss-image {
+        height: 320px;
+    }
+
+    .harbinger-card {
         flex-direction: column;
     }
 
-    .logo {
-        height: 100px;
+    .harbinger-image {
+        width: 100%;
+        height: 250px;
+        min-width: auto;
+    }
+
+    .harbinger-info {
+        padding: 1rem;
     }
 }
